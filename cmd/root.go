@@ -24,6 +24,7 @@ import (
 )
 
 var PrintHeaders bool
+var ElasticURL string
 
 // RootCmd represents the base command when called without any subcommands
 var RootCmd = &cobra.Command{
@@ -46,6 +47,7 @@ func Execute() {
 
 func init() {
 	RootCmd.PersistentFlags().BoolVarP(&PrintHeaders, "verbose", "v", false, "print column headers")
+	RootCmd.PersistentFlags().StringVarP(&ElasticURL, "url", "u", "http://localhost:9200", "elastic url")
 	cobra.OnInitialize(initES)
 
 	// Here you will define your flags and configuration settings.
@@ -61,7 +63,7 @@ func init() {
 var elasticClient = &elastic.Client{}
 
 func initES() {
-	client, err := elastic.NewClient(http.DefaultClient)
+	client, err := elastic.NewClient(http.DefaultClient, ElasticURL)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error connecting client : %s\n", err)
 		return
