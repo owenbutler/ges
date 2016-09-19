@@ -21,35 +21,36 @@ import (
 	"github.com/spf13/cobra"
 )
 
-// masterCmd represents the master command
-var masterCmd = &cobra.Command{
-	Use:   "master",
-	Short: "list master node",
-	Long:  `list master node of the cluster`,
-	Run:   RunMaster,
-}
-
-func RunMaster(cmd *cobra.Command, args []string) {
-	master(ElasticURL)
-}
-
-func master(url string) {
+func nodes(url string) {
 
 	state := getClusterState(url)
 
 	table := uitable.New()
 	if PrintHeaders {
-		table.AddRow("nodeid", "address", "name")
+		table.AddRow("id", "address", "master?", "name")
 	}
-	masterNode := state.Nodes[state.MasterNode]
-	table.AddRow(
-		state.MasterNode,
-		masterNode.TransportAddress,
-		masterNode.Name)
-
+	for nodeID, node := range state.Nodes {
+		master := ""
+		if nodeID == state.MasterNode {
+			master = "*"
+		}
+		table.AddRow(nodeID, node.TransportAddress, master, node.Name)
+	}
 	fmt.Println(table)
 }
 
+func RunNodes(cmd *cobra.Command, args []string) {
+	nodes(ElasticURL)
+}
+
+// nodesCmd represents the nodes command
+var nodesCmd = &cobra.Command{
+	Use:   "nodes",
+	Short: "node stats",
+	Long:  `node stats, including master node identity`,
+	Run:   RunNodes,
+}
+
 func init() {
-	RootCmd.AddCommand(masterCmd)
+	RootCmd.AddCommand(nodesCmd)
 }
