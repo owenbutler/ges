@@ -66,7 +66,7 @@ func initES() {
 	client, err := elastic.NewClient(http.DefaultClient, ElasticURL)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error connecting client : %s\n", err)
-		return
+		os.Exit(1)
 	}
 	elasticClient = client
 }
