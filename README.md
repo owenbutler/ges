@@ -1,4 +1,5 @@
 # ges
+
 command line es cluster stats and health
 
 # Installation
@@ -24,9 +25,13 @@ command line es cluster stats and health
 
     Use "ges [command] --help" for more information about a command.
 
+# Health
+
     $ ges -v health
     cluster	status	nodes	data	pri	shards	relo	init	unassign
     ex1   	green 	3    	3   	5  	10    	0   	0   	0
+
+# Nodes
 
     $ ges -v nodes
     id                    	address                    	master?	name
