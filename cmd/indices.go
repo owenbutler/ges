@@ -30,7 +30,6 @@ var indicesCmd = &cobra.Command{
 }
 
 func RunIndices(cmd *cobra.Command, args []string) {
-	fmt.Println(args)
 	indices(ElasticURL)
 }
 
