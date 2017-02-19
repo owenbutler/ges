@@ -46,6 +46,41 @@ type MemoryPool struct {
 	PeakMaxInBytes  int    `json:"peak_max_in_bytes"`
 }
 
+type IndicesState struct {
+	Indices map[string]Index `json:"indices"`
+}
+
+type Index struct {
+	IndexSize IndexSizeStat          `json:"index"`
+	Docs      DocSizeStat            `json:"docs"`
+	Shards    map[string][]ShardStat `json:"shards"`
+}
+
+type IndexSizeStat struct {
+	Size      string `json:"size"`
+	SizeBytes int64  `json:"size_in_bytes"`
+}
+
+type DocSizeStat struct {
+	NumDocs     int64 `json:"num_docs"`
+	MaxDoc      int64 `json:"max_doc"`
+	DeletedDocs int64 `json:"deleted_docs"`
+}
+
+type ShardStat struct {
+	Routing RoutingStat   `json:"routing"`
+	State   string        `json:"state"`
+	Size    IndexSizeStat `json:"index"`
+	Docs    DocSizeStat   `json:"docs"`
+}
+
+type RoutingStat struct {
+	State          string `json:"state"`
+	Primary        bool   `json:"primary"`
+	Node           string `json:"node"`
+	RelocatingNode string `json:"relocating_node"`
+}
+
 func getBytesForUrl(base, path string) []byte {
 	fullUrl := fmt.Sprintf("%s%s", base, path)
 	resp, err := http.Get(fullUrl)
@@ -76,4 +111,12 @@ func getClusterNodeState(url string) ClusterNodeState {
 
 	json.Unmarshal(bytes, &clusterNodeState)
 	return clusterNodeState
+}
+
+func getIndicesState(url string) IndicesState {
+	state := IndicesState{}
+	stateBytes := getBytesForUrl(url, "/_status")
+
+	json.Unmarshal(stateBytes, &state)
+	return state
 }
