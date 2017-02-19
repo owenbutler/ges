@@ -1,6 +1,8 @@
 # ges
 
-command line es cluster stats and health
+Command line es cluster stats and health
+
+This will only be useful for you if you are using 0.19.x of Elasticsearch.  Use the cat API if you are on a higher version of ES.
 
 # Installation
 
