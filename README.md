@@ -19,6 +19,7 @@ This will only be useful for you if you are using 0.19.x of Elasticsearch.  Use 
     Available Commands:
       health      cluster health
       heap        Heap statistics for nodes
+      indices     Show elasticsearch indices
       master      list master node
       nodes       node stats
 
@@ -34,6 +35,20 @@ This will only be useful for you if you are using 0.19.x of Elasticsearch.  Use 
     cluster	status	nodes	data	pri	shards	relo	init	unassign
     ex1   	green 	3    	3   	5  	10    	0   	0   	0
 
+# Heap
+
+    $ ges -v heap
+    id                    	old gen	max  	ratio 	name
+    lVTsvcZbTgSdn0JTH0fGmg	306.4mb	1.8gb	16.28%	foo.ex
+    hAmSThzMQbmkUpXUvxeLTw	372.8mb	1.8gb	19.82%	bar.ex
+    KV59Xm7wRXOBqKxAQUu1nQ	212.7mb	1.8gb	11.30%	baz.ex
+
+# Indices
+
+    $ ges -v indices
+    status	name 	pri	rep	size	docs
+    green 	examp	5  	5  	56mb	29449
+
 # Nodes
 
     $ ges -v nodes
@@ -42,10 +57,3 @@ This will only be useful for you if you are using 0.19.x of Elasticsearch.  Use 
     lVTsvcZbTgSdn0JTH0fGmg	inet[/192.168.1.13:9300]	       	bar.ex
     hAmSThzMQbmkUpXUvxeLTw	inet[/192.168.1.17:9300]	       	baz.ex
 
-# Heap
-
-    $ ges -v heap
-    id                    	old gen	max  	ratio 	name
-    lVTsvcZbTgSdn0JTH0fGmg	306.4mb	1.8gb	16.28%	foo.ex
-    hAmSThzMQbmkUpXUvxeLTw	372.8mb	1.8gb	19.82%	bar.ex
-    KV59Xm7wRXOBqKxAQUu1nQ	212.7mb	1.8gb	11.30%	baz.ex
