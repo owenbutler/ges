@@ -49,6 +49,12 @@ This will only be useful for you if you are using 0.19.x of Elasticsearch.  Use 
     status	name 	pri	rep	size	docs
     green 	examp	5  	5  	56mb	29449
 
+# Master
+
+    $ ges -v master
+    nodeid                	address                	name
+    aAfe19jhTMyFmMKtjss7YQ	inet[/10.0.58.149:9300]	foo.ex
+
 # Nodes
 
     $ ges -v nodes
