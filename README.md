@@ -17,6 +17,7 @@ This will only be useful for you if you are using 0.19.x of Elasticsearch.  Use 
       ges [command]
 
     Available Commands:
+      allocation  Manage shard allocation
       health      Cluster health
       heap        Heap statistics for nodes
       indices     Show elasticsearch indices
@@ -79,3 +80,13 @@ This will only be useful for you if you are using 0.19.x of Elasticsearch.  Use 
     examp	0    	r      	STARTED	5804	5.5mb	aAfe19jhTMyFmMKtjss7YQ	          
     examp	1    	p      	STARTED	5966	5.6mb	vqmL6JCDQqWCjH15tAwXgg	          
     examp	1    	r      	STARTED	5966	5.6mb	aAfe19jhTMyFmMKtjss7YQ
+
+# Allocation
+
+Small utilities to disable and enable shard allocation, useful in rolling restarts.
+
+## Disable allocation
+
+    $ ges allocation disable
+    $ # restart a node
+    $ ges allocation enable
