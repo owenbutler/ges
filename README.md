@@ -83,7 +83,7 @@ This will only be useful for you if you are using 0.19.x of Elasticsearch.  Use 
 
 # Allocation
 
-Small utilities to disable and enable shard allocation, useful in rolling restarts.
+Small utilities to disable and enable shard allocation, useful in rolling restarts.  Again, probably only useful if you are on v0.19.x of Elasticsearch.  Later versions use a different property, so this won't work.
 
     $ ges allocation disable
     $ # restart a node
