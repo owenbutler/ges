@@ -22,6 +22,7 @@ This will only be useful for you if you are using 0.19.x of Elasticsearch.  Use 
       indices     Show elasticsearch indices
       master      List master node
       nodes       Node stats
+      shards      List shards in the cluster 
 
     Flags:
       -u, --url string   elastic url (default "http://localhost:9200")
@@ -63,3 +64,18 @@ This will only be useful for you if you are using 0.19.x of Elasticsearch.  Use 
     lVTsvcZbTgSdn0JTH0fGmg	inet[/192.168.1.13:9300]	       	bar.ex
     hAmSThzMQbmkUpXUvxeLTw	inet[/192.168.1.17:9300]	       	baz.ex
 
+
+# Shards
+
+    $ ges -v shards
+    index	shard	pri/rep	state  	docs	size 	node                  	relocating
+    examp	2    	p      	STARTED	5945	5.7mb	vqmL6JCDQqWCjH15tAwXgg	          
+    examp	2    	r      	STARTED	5945	5.7mb	9F9gtnrbTQCJn4bF02Snow	          
+    examp	3    	r      	STARTED	5780	5.5mb	9F9gtnrbTQCJn4bF02Snow	          
+    examp	3    	p      	STARTED	5780	5.5mb	aAfe19jhTMyFmMKtjss7YQ	          
+    examp	4    	r      	STARTED	5954	5.6mb	9F9gtnrbTQCJn4bF02Snow	          
+    examp	4    	p      	STARTED	5954	5.6mb	aAfe19jhTMyFmMKtjss7YQ	          
+    examp	0    	p      	STARTED	5804	5.5mb	vqmL6JCDQqWCjH15tAwXgg	          
+    examp	0    	r      	STARTED	5804	5.5mb	aAfe19jhTMyFmMKtjss7YQ	          
+    examp	1    	p      	STARTED	5966	5.6mb	vqmL6JCDQqWCjH15tAwXgg	          
+    examp	1    	r      	STARTED	5966	5.6mb	aAfe19jhTMyFmMKtjss7YQ
