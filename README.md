@@ -17,11 +17,11 @@ This will only be useful for you if you are using 0.19.x of Elasticsearch.  Use 
       ges [command]
 
     Available Commands:
-      health      cluster health
+      health      Cluster health
       heap        Heap statistics for nodes
       indices     Show elasticsearch indices
-      master      list master node
-      nodes       node stats
+      master      List master node
+      nodes       Node stats
 
     Flags:
       -u, --url string   elastic url (default "http://localhost:9200")
