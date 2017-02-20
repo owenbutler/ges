@@ -1,0 +1,13 @@
+{
+    "dependencies": {
+        "github.com/gosuri/uitable": {
+            "branch": "master"
+        },
+        "github.com/spf13/cobra": {
+            "branch": "master"
+        },
+        "gopkg.in/olivere/elastic.v1": {
+            "branch": "master"
+        }
+    }
+}

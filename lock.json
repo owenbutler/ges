@@ -1,0 +1,61 @@
+{
+    "memo": "a500fbd4cd21207d6768856cb22723481c9cd2b26f9442108ef6bc7362e5256a",
+    "projects": [
+        {
+            "name": "github.com/gosuri/uitable",
+            "branch": "master",
+            "revision": "36ee7e946282a3fb1cfecd476ddc9b35d8847e42",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/inconshreveable/mousetrap",
+            "branch": "master",
+            "revision": "76626ae9c91c4f2a10f34cad8ce83ea42c93bb75",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/mattn/go-runewidth",
+            "branch": "master",
+            "revision": "d6bea18f789704b5f83375793155289da36a3c7f",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/olivere/elastic",
+            "branch": "release-branch.v3",
+            "revision": "67b4c6f789295b1bffd893564ed60f51fc07f7a7",
+            "packages": [
+                "uritemplates"
+            ]
+        },
+        {
+            "name": "github.com/spf13/cobra",
+            "branch": "master",
+            "revision": "9c28e4bbd74e5c3ed7aacbc552b2cab7cfdfe744",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/spf13/pflag",
+            "branch": "master",
+            "revision": "c7e63cf4530bcd3ba943729cee0efeff2ebea63f",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "gopkg.in/olivere/elastic.v1",
+            "branch": "master",
+            "revision": "65a54b2f4d7706edacb93f923d204af7f1696a2a",
+            "packages": [
+                "."
+            ]
+        }
+    ]
+}
