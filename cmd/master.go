@@ -24,8 +24,8 @@ import (
 // masterCmd represents the master command
 var masterCmd = &cobra.Command{
 	Use:   "master",
-	Short: "list master node",
-	Long:  `list master node of the cluster`,
+	Short: "List master node",
+	Long:  `List master node of the cluster`,
 	Run:   RunMaster,
 }
 

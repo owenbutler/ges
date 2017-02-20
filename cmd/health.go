@@ -26,7 +26,7 @@ import (
 // healthCmd represents the health command
 var healthCmd = &cobra.Command{
 	Use:   "health",
-	Short: "cluster health",
+	Short: "Cluster health",
 	Long:  `Cluster health and general health statistics`,
 	Run:   RunHealth,
 }

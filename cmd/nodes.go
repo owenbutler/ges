@@ -46,8 +46,8 @@ func RunNodes(cmd *cobra.Command, args []string) {
 // nodesCmd represents the nodes command
 var nodesCmd = &cobra.Command{
 	Use:   "nodes",
-	Short: "node stats",
-	Long:  `node stats, including master node identity`,
+	Short: "Node stats",
+	Long:  `Node stats, including master node identity`,
 	Run:   RunNodes,
 }
 
